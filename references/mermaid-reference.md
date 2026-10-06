@@ -504,7 +504,7 @@ kanban
 **Note:** your `K8s-Syllabus.md` uses the separate Kanban *plugin* (frontmatter `kanban-plugin: board`), which is different from this diagram type.
 
 ## 23. Architecture
-**Keyword:** `architecture-beta` · **Use when:** cloud / CI-CD service topology. *(Best for your D38 README diagram.)*
+**Keyword:** `architecture-beta` · **Use when:** cloud / CI-CD service topology.
 
 ```mermaid
 architecture-beta
@@ -636,6 +636,7 @@ cynefin-beta
 **Keyword:** `treeView-beta` · **Use when:** file tree / nested hierarchy.
 
 ```mermaid
+%%{init: {'theme': 'light'}}%%
 treeView-beta
 ├── src/
 │   ├── index.ts
@@ -643,7 +644,7 @@ treeView-beta
 └── package.json
 ```
 **Key features:** literal `├──` / `│` / `└──` tree characters; indentation for nesting.
-**Gotcha:** `-beta`; the tree is drawn from the literal glyphs.
+**Gotcha:** `-beta`; the tree is drawn from the literal glyphs. treeView's colors are theme-blind (fixed dark text, don't adapt to dark themes), so this example forces a light theme to keep it readable in dark-mode GitHub.
 
 ---
 
@@ -692,11 +693,11 @@ Usage: `A@{ shape: diamond, label: "Decision" }`.
 
 ## ERD cardinality (crow's foot)
 | Left entity | Right entity | Meaning |
-|-----------|-------------|---------|
-| `||` | `o{` | 1-to-zero-or-more |
-| `||` | `|{` | 1-to-1-or-more |
-| `o{` | `o{` | many-to-many (non-identifying) |
-| `||` | `||` | 1-to-1 (identifying) |
+|:-----------|:-------------|:--------|
+| <code>&#124;&#124;</code> | <code>o{</code> | 1-to-zero-or-more |
+| <code>&#124;&#124;</code> | <code>&#124;{</code> | 1-to-1-or-more |
+| <code>o{</code> | <code>o{</code> | many-to-many (non-identifying) |
+| <code>&#124;&#124;</code> | <code>&#124;&#124;</code> | 1-to-1 (identifying) |
 Solid line = identifying (child can't exist without parent); dashed `..` = non-identifying.
 
 ## Class relationship arrows
