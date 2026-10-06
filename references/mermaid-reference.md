@@ -226,7 +226,7 @@ erDiagram
 - Solid line = **identifying** relationship (child needs parent); dashed `..` = **non-identifying**.
 - Attributes: `ATTRIBUTE TYPE` inside an entity, e.g. `id INT PK`.
 - Entity names are usually upper-case.
-**Common cardinalities:** `||` exactly one · `o{` zero or more · `|{` one or more · `}o` many-to-zero-or-more · `}}` many-to-many.
+**Common cardinalities (left / right):** `|o`/`o|` zero or one · `||` exactly one · `}o`/`o{` zero or more · `}|`/`|{` one or more.
 **Gotcha:** the two markers on each end are **two characters** (outer = max, inner = min).
 
 ## 7. User Journey
@@ -696,8 +696,8 @@ Usage: `A@{ shape: diamond, label: "Decision" }`.
 |:-----------|:-------------|:--------|
 | <code>&#124;&#124;</code> | <code>o{</code> | 1-to-zero-or-more |
 | <code>&#124;&#124;</code> | <code>&#124;{</code> | 1-to-1-or-more |
-| <code>o{</code> | <code>o{</code> | many-to-many (non-identifying) |
-| <code>&#124;&#124;</code> | <code>&#124;&#124;</code> | 1-to-1 (identifying) |
+| <code>}o</code> | <code>o{</code> | many-to-many |
+| <code>&#124;&#124;</code> | <code>&#124;&#124;</code> | 1-to-1 |
 Solid line = identifying (child can't exist without parent); dashed `..` = non-identifying.
 
 ## Class relationship arrows
