@@ -636,7 +636,7 @@ cynefin-beta
 **Keyword:** `treeView-beta` · **Use when:** file tree / nested hierarchy.
 
 ```mermaid
-%%{init: {'theme': 'light'}}%%
+%%{init: {'themeCSS': '.treeView-node-label{fill:#77808d!important}.treeView-node-line{stroke:#77808d!important}'}}%%
 treeView-beta
 ├── src/
 │   ├── index.ts
@@ -644,7 +644,7 @@ treeView-beta
 └── package.json
 ```
 **Key features:** literal `├──` / `│` / `└──` tree characters; indentation for nesting.
-**Gotcha:** `-beta`; the tree is drawn from the literal glyphs. treeView's colors are theme-blind (fixed dark text, don't adapt to dark themes), so this example forces a light theme to keep it readable in dark-mode GitHub.
+**Gotcha:** `-beta`; the tree is drawn from the literal glyphs. The SVG is transparent and the text/line colors are hard-coded **black** (theme-blind), so a plain treeView is invisible on dark backgrounds (GitHub/Obsidian dark mode). The `themeCSS` override above re-inks the labels/lines in a neutral gray (`#77808d`) that reads on both light and dark backgrounds.
 
 ---
 
